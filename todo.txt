@@ -8,4 +8,6 @@
 - on the things view display the user who owns it (if they have an owner)
   (you don't need an include)
 - on the users view display the things a user owns
+
+
 - add a select object on the things page for each thing, which allows you to assign the thing to a new user, or no user

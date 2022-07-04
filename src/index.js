@@ -8,6 +8,7 @@ import Things from './Things';
 import Home from './Home';
 import store from './store';
 import { Provider, connect } from 'react-redux';
+import { SET_USERS, SET_VIEW, SET_THINGS } from './store';
 
 const root = createRoot(document.querySelector('#app'));
 
@@ -22,7 +23,8 @@ class _App extends Component{
     catch(ex){
       console.log(ex);
     }
-  }
+  };
+
   render(){
     const { view } = this.props;
     return (
@@ -49,7 +51,7 @@ class _App extends Component{
 const mapDispatch = (dispatch)=> {
   return {
     setView: (view)=> {
-      dispatch({ type: 'SET_VIEW', view });
+      dispatch({ type: SET_VIEW, view });
     },
     loadData: async()=> {
       const responses = await Promise.all([
@@ -57,11 +59,11 @@ const mapDispatch = (dispatch)=> {
         axios.get('/api/things'),
       ]);
       dispatch({
-        type: 'SET_USERS',
+        type: SET_USERS,
         users: responses[0].data
       });
       dispatch({
-        type: 'SET_THINGS',
+        type: SET_THINGS,
         things: responses[1].data
       });
     }

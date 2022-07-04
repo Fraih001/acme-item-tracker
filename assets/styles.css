@@ -1,0 +1,109 @@
+* {
+    /* border: 1px solid gold */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #60495A;
+    color: #BFC3BA
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    color: #A9ACA9
+  }
+
+  h1 {
+    padding: .5rem;
+  }
+
+  button {
+    margin: .2rem;
+    background-color: #3F3244;
+    color: #BFC3BA;
+  }
+
+  select  {
+    margin-top: .5rem;
+  }
+
+  nav a {
+    color: #A9ACA9;
+    text-decoration: none;
+  }
+  
+  nav a.selected {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #BFC3BA;
+    text-decoration: none;
+  }
+
+  li {
+    list-style-type: none;
+    padding-bottom: .5rem;
+    background-color: #2F2235;
+    padding: 1rem;
+    margin: .4rem;
+  }
+
+  #home-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  #things-main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #thing-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #thing-name{
+    font-weight: bold
+  }
+
+  #user-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #highRank {
+    font-weight: bold
+  }
+
+  #owned-things {
+    display: flex;
+    padding: .25rem;
+  }
+
+  #own-things {
+    display: flex;
+    align-items: center;
+  }
+
+  #ranking {
+    align-content: flex-end;
+  }
+
+  #name-ranking {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #owner-ranks {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
