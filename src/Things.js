@@ -34,7 +34,7 @@ const Things = ({ things, users, deleteThing, increaseRank, decreaseRank, editOw
                                 <option>Select an Owner</option>
                                 <option value={ null }>No Owner</option>
                                   {users.map((user)=> (
-                                    <option type="reset" value={ user.id }>{user.name}</option>
+                                    <option key={ user.id } type="reset" value={ user.id }>{user.name}</option>
                                     ))} 
                               </select>
                             </div>
@@ -86,7 +86,7 @@ const mapDispatchToProps = ( dispatch ) => {
       await axios.delete(`/api/things/${thingId}`);
       dispatch({type: DELETE_THING, thingId });
     },
-    editOwner: async(userId, thingId)=>{
+    editOwner: async(userId, thingId) => {
       userId = userId * 1
       const update = (await axios.put(`/api/things/${thingId}`, {
         userId: userId
