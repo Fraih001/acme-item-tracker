@@ -2,10 +2,10 @@ import axios from 'axios';
 import React from 'react';
 import { connect } from 'react-redux';
 import UserForm from './UserForm';
-import { DELETE_USER } from './store'
+import { DELETE_THING, DELETE_USER } from './store'
 
 
-const Users = ({ users, things, deleteUser })=> {
+const Users = ({ users, things, deleteUser, deleteThing })=> {
   return (
     <div>
     <div id='user-header'>
@@ -24,7 +24,7 @@ const Users = ({ users, things, deleteUser })=> {
                     if (thing.userId === user.id) {
                       return (
                       <div id='owned-things' key={ thing.id }>
-                        { thing.name } 
+                        { thing.name } <button onClick={ ()=> deleteThing(thing.id) }>X</button>
                         </div> 
                         )
                     }
@@ -43,6 +43,10 @@ const mapDispatchToProps = (dispatch) => {
     deleteUser: async(userId)=>{
       await axios.delete(`/api/users/${userId}`)
       dispatch({ type: DELETE_USER, userId })
+    },
+    deleteThing: async(thingId)=>{
+      await axios.delete(`/api/things/${thingId}`)
+      dispatch({type: DELETE_THING, thingId})
     }
   }
 }
