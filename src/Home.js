@@ -13,10 +13,8 @@ const names = [];
   users.map(user => {
     if (thing.userId === user.id) {
       names.push(user.name)
-    }
-  })
-})
-};
+    }})
+  })};
 
 //map over array, counting each instance of a name and adding the count to an object
 const counts = {};
@@ -26,11 +24,11 @@ names.forEach((name)=>{
 })
 
 //sort the object by the values in each key:value pair
-const sortable = Object.fromEntries(
+const sortedCounts = Object.fromEntries(
     Object.entries(counts).sort(([,a],[,b]) => b-a));
 
 //the first key in sorted object is the user with the most things
-console.log(Object.keys(sortable)[0]);
+console.log(Object.keys(sortedCounts)[0]);
     
 return (
     <div id='home-main'>
@@ -59,7 +57,7 @@ return (
         <div>
         <br></br>
 
-          The user with the most THINGS is: { Object.keys(sortable)[0] }
+          The user with the most THINGS is: { Object.keys(sortedCounts)[0] }
         </div>
     </div>
   );
